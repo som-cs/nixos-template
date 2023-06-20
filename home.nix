@@ -26,23 +26,24 @@
     pkgs.betterdiscordctl
     pkgs.spotify
     pkgs.oh-my-zsh
-    pkgs.dunst
-    pkgs.hyprland
-    pkgs.neofetch
+#    pkgs.hyprland
     pkgs.alacritty
-    pkgs.xwayland
-    pkgs.wayland
     pkgs.qbittorrent
-    pkgs.swaybg
     pkgs.gnome.gnome-tweaks
-    pkgs.wev
-    pkgs.waybar
-    pkgs.rofi
+#    pkgs.waybar
+#    pkgs.rofi
+
+# C++
     pkgs.gcc
     pkgs.binutils
-    pkgs.xdg-desktop-portal
-    pkgs.qt6.qtwayland
-    pkgs.xdp-tools
+    pkgs.ninja
+    pkgs.openssl
+    pkgs.cmake
+#    pkgs.libcpr
+
+#python
+    pkgs.python311
+    pkgs.python311Packages.bpython
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
