@@ -7,7 +7,7 @@
 
 #let
 #  flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
-
+#
 #  hyprland = (import flake-compat {
 #        src = builtins.fetchTarball "https://github.com/hyprwm/Hyprland/archive/master.tar.gz";
 #        }).defaultNix;
@@ -17,7 +17,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
- #     hyprland.homeManagerModules.default
+#      hyprland.homeManagerModules.default
     ];
 
 
@@ -59,7 +59,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -127,6 +127,7 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
+    (mpv.override {scripts = [mpvScripts.mpris];})
   ];
 
   # Window manager
@@ -167,13 +168,29 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 # Enabling Nvidia
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  #nixpkgs.config.allowUnfreePredicate = pkg:
+  #  builtins.elem (lib.getName pkg) [
+  #    "nvidia-x11"
+  #];
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
   hardware.nvidia = {
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
   };
+  #hardware.nvidia.prime = {
+  #  offload = {
+  #    enable = true;
+  #    enableOffloadCmd = true;
+  #  };
+  #  nvidiaBusId = "PCI:1:0:0";
+  #};
 
   nix = {
     package = pkgs.nixFlakes;
