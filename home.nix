@@ -22,23 +22,12 @@
     # # "Hello, world!" when run.
     # pkgs.hello
     pkgs.vlc
-    pkgs.betterdiscordctl
     pkgs.spotify
     pkgs.oh-my-zsh
-    pkgs.hyprland
     pkgs.alacritty
     pkgs.qbittorrent
-    pkgs.waybar
-    pkgs.rofi
-    pkgs.dunst
     pkgs.wayland
-    pkgs.playerctl
-    pkgs.image-roll
-    pkgs.pulseaudioFull
     pkgs.obsidian
-    pkgs.docker
-    pkgs.cinnamon.nemo
-    pkgs.termius
     pkgs.discord-ptb
 # C++
     pkgs.gcc
@@ -47,12 +36,6 @@
     pkgs.openssl
     pkgs.cmake
 #    pkgs.libcpr
-
-#python
-    pkgs.python311
-    pkgs.python311Packages.pip
-    pkgs.python311Packages.bpython
-
 # gaming
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
