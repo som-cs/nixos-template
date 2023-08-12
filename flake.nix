@@ -11,7 +11,7 @@
   };
 
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs: 
+outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs: 
     let
       inherit (nixpkgs) lib;
       genSystems = lib.genAttrs [
@@ -58,8 +58,8 @@
       };
 
       overlays.default = final: prev: {
-      xdg-desktop-portal-hyprland = final.callPackage ./nix/default.nix {
-        inherit (final) hyprland-protocols hyprland-share-picker;
+     xdg-desktop-portal-hyprland = final.callPackage ./nix/default.nix {
+       inherit (final) hyprland-protocols hyprland-share-picker;
         inherit version;
       };
 

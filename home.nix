@@ -29,12 +29,17 @@
     pkgs.wayland
     pkgs.obsidian
     pkgs.discord-ptb
+    pkgs.jetbrains.pycharm-community
+    pkgs.jetbrains.clion
 # C++
     pkgs.gcc
     pkgs.binutils
     pkgs.gnumake
     pkgs.openssl
     pkgs.cmake
+
+# Development
+    pkgs.pkg-config
 #    pkgs.libcpr
 # gaming
     # # It is sometimes useful to fine-tune packages, for example, by applying
